@@ -37,6 +37,16 @@ env/
 .DS_Store
 Thumbs.db
 
+# Model checkpoints and training outputs
+models/
+*.bin
+*.safetensors
+
+# Logs
+*.log
+runs/
+wandb/
+
 # Data files (optional - uncomment if needed)
 # *.csv
 # processed/

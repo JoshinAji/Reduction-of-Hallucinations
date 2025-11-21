@@ -1,0 +1,3 @@
+id,clinical_note,model_summary,label,hallucination_type
+4,Patient denies shortness of breath. Oxygen saturation 98%.,The patient experienced severe shortness of breath.,hallucinated,fabrication
+2,32-year-old female with migraine episodes. CT scan shows no abnormalities.,The patient experiences migraines but imaging is normal.,factual,

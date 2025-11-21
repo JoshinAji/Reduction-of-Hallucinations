@@ -1,0 +1,2 @@
+id,clinical_note,model_summary,label,hallucination_type
+9,Patient reports sore throat. Rapid strep test negative. No fever.,The patient has a bacterial throat infection.,hallucinated,fabrication

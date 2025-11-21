@@ -279,10 +279,17 @@ class DataPreprocessor:
                 augmented_df = pd.DataFrame(augmented_examples)
                 processed_df = pd.concat([processed_df, augmented_df], ignore_index=True)
                 print(f"  Generated {len(augmented_examples)} augmented examples")
-        
+
         # Save processed data
-        processed_df.to_csv(output_path, index=False)
-        print(f"  Saved {len(processed_df)} records to {output_path}")
+        if self.output_format == "triplets":
+            # DPO/training libraries prefer JSONL for nested text data
+            jsonl_path = output_path.replace(".csv", ".jsonl")
+            processed_df.to_json(jsonl_path, orient="records", lines=True)
+            print(f"  Saved {len(processed_df)} triplets to {jsonl_path}")
+        else:
+            # SFT data is usually fine as CSV
+            processed_df.to_csv(output_path, index=False)
+            print(f"  Saved {len(processed_df)} records to {output_path}")
     
     def process_all_splits(
         self,
@@ -299,7 +306,7 @@ class DataPreprocessor:
             splits: List of split names (default: train, validation, test)
         """
         if splits is None:
-            splits = ["train", "validation", "test"]
+            splits = ["Sets\train", "Sets\validation", "Sets\test"]
         
         data_path = Path(data_dir)
         output_path = Path(output_dir)
