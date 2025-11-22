@@ -47,10 +47,17 @@ models/
 runs/
 wandb/
 
-# Data files (optional - uncomment if needed)
-# *.csv
-# processed/
-# processed_full/
+# Data files - exclude large datasets
+phase1_data/
+phase1_data_medhal/
+phase2_data/
+processed/
+processed_full/
+Sets/*.csv
+
+# Jupyter notebook checkpoints
+.ipynb_checkpoints/
+*.ipynb
 
 # Environment variables
 .env

@@ -306,7 +306,7 @@ class DataPreprocessor:
             splits: List of split names (default: train, validation, test)
         """
         if splits is None:
-            splits = ["Sets\train", "Sets\validation", "Sets\test"]
+            splits = ["train", "validation", "test"]
         
         data_path = Path(data_dir)
         output_path = Path(output_dir)
