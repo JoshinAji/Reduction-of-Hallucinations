@@ -47,17 +47,19 @@ models/
 runs/
 wandb/
 
-# Data files - exclude large datasets
+# Generated data directories (users will create these)
 phase1_data/
 phase1_data_medhal/
 phase2_data/
 processed/
 processed_full/
+
+# User data files (keep directory structure but exclude data)
 Sets/*.csv
+!Sets/.gitkeep
 
 # Jupyter notebook checkpoints
 .ipynb_checkpoints/
-*.ipynb
 
 # Environment variables
 .env
